@@ -16,6 +16,17 @@
 
         <activity android:name=".HigherOrLower"
             android:exported="true"
+            android:label="Higher or Lower"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ActivitySimpleCounter"
+            android:exported="true"
+            android:label="Simple Counter"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
