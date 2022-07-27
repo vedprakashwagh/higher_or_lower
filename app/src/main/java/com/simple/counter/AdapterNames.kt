@@ -15,15 +15,16 @@ class AdapterNames(val names: Array<String>?): RecyclerView.Adapter<RecyclerView
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val viewHolder = holder as ViewHolderListItemName
-        viewHolder.name.text = names?.get(position).toString()
+        viewHolder.name.text = position.toString()
     }
 
     override fun getItemCount(): Int {
-        if(names == null){
-            return 0
-        } else {
-            return names.size
-        }
+        return 100000
+//        if(names == null){
+//            return 0
+//        } else {
+//            return names.size
+//        }
     }
 
 

@@ -1,9 +1,9 @@
 package com.simple.counter
 
+
 import android.app.Activity
 import android.os.Bundle
 import android.widget.LinearLayout
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
