@@ -14,16 +14,22 @@
         android:theme="@style/Theme.SimpleCounter"
         tools:targetApi="31">
 
+        <activity android:name=".ActivityListOfNames"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
         <activity android:name=".HigherOrLower"
             android:exported="true"
             android:label="Higher or Lower"
             android:icon="@color/blue"
             android:roundIcon="@color/blue"
             >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".ActivitySimpleCounter"
@@ -32,11 +38,6 @@
             android:icon="@color/red"
             android:roundIcon="@color/red"
             >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
 
     </application>
