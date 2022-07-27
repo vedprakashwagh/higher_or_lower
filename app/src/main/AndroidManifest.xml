@@ -17,6 +17,8 @@
         <activity android:name=".HigherOrLower"
             android:exported="true"
             android:label="Higher or Lower"
+            android:icon="@color/blue"
+            android:roundIcon="@color/blue"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,11 +29,14 @@
         <activity android:name=".ActivitySimpleCounter"
             android:exported="true"
             android:label="Simple Counter"
+            android:icon="@color/red"
+            android:roundIcon="@color/red"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
     </application>

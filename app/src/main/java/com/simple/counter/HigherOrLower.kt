@@ -2,9 +2,11 @@ package com.simple.counter
 
 import android.app.Activity
 import android.app.Service
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
@@ -29,8 +31,14 @@ class HigherOrLower: AppCompatActivity() {
 
         val userInput: EditText = findViewById(R.id.userInput)
         val buttonUserGuess: Button = findViewById(R.id.buttonUserGuess)
+        val textviewRandomNumber: TextView = findViewById(R.id.textviewRandomNumber)
+
+        textviewRandomNumber.text = "Random number chosen by computer is: "+randomNumber.toString()
 
         buttonUserGuess.setOnClickListener {
+
+            startActivity(Intent(this@HigherOrLower, ActivitySimpleCounter::class.java))
+
             val userGuess : Int = userInput.text.toString().toInt()
             numberOfTries += 1
 
@@ -46,6 +54,8 @@ class HigherOrLower: AppCompatActivity() {
                 else -> {
                     Toast.makeText(this@HigherOrLower, "Success, you won after ${numberOfTries} tries!", Toast.LENGTH_LONG).show()
                     randomNumber = Random.nextInt(0, 101)
+                    textviewRandomNumber.text = "Random number chosen by computer is: "+randomNumber.toString()
+
                     numberOfTries = 0
                 }
 
