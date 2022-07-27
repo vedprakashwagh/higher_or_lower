@@ -33,7 +33,7 @@ class ActivitySimpleCounter: AppCompatActivity() {
 
     fun saveCounterNumber(number: Int) {
         val sharedPreference = getSharedPreferences(SHARED_PREFERENCE_FILE, MODE_PRIVATE)
-        sharedPreference.edit().putInt(INCREMENTED_NUMBER, number).commit()
+        sharedPreference.edit().putInt(INCREMENTED_NUMBER, number).apply()
     }
 
     private fun getCounterNumber() : Int {

@@ -37,8 +37,6 @@ class HigherOrLower: AppCompatActivity() {
 
         buttonUserGuess.setOnClickListener {
 
-            startActivity(Intent(this@HigherOrLower, ActivitySimpleCounter::class.java))
-
             val userGuess : Int = userInput.text.toString().toInt()
             numberOfTries += 1
 
