@@ -8,6 +8,7 @@
     >
 
     <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/profilePicture"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:src="@color/blue"
@@ -26,6 +27,7 @@
         >
 
         <TextView
+            android:id="@+id/chatName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Weekend"
@@ -35,6 +37,7 @@
             />
 
         <TextView
+            android:id="@+id/chatMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sofia"
@@ -49,6 +52,7 @@
         android:gravity="center"
         >
         <TextView
+            android:id="@+id/chatMessageTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="9:49"
@@ -56,6 +60,7 @@
             />
 
         <FrameLayout
+            android:id="@+id/unreadMessageCountHolder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
@@ -69,6 +74,7 @@
                 />
 
             <TextView
+                android:id="@+id/unreadMessageCount"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="2"

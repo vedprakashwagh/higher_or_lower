@@ -11,4 +11,6 @@
     <color name="red">#FF0000</color>
     <color name="blue">#0000FF</color>
 
+    <color name="status_bar_color">#075E54</color>
+    <color name="teal_green">#128C7E</color>
 </resources>
