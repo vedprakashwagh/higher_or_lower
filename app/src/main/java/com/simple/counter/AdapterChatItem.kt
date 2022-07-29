@@ -1,13 +1,20 @@
 package com.simple.counter
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.makeramen.roundedimageview.RoundedImageView
 import com.simple.counter.model.ModelChat
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AdapterChatItem : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -27,7 +34,25 @@ class AdapterChatItem : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         var currentChatItem = listItems?.get(position)
         chatItem.chatName.text = currentChatItem?.userName
         chatItem.chatMessage.text = currentChatItem?.userMessage
+        Glide.with(holder.itemView.context).load(currentChatItem?.imageUrl).into(holder.profilePicture)
+        chatItem.chatMessageTime.text = getFormattedTime(currentChatItem?.time ?: 0)
+        chatItem.unreadMessageCount.text = currentChatItem?.numberOfMessages?.toString()
 
+        if(currentChatItem?.numberOfMessages == 0){
+            chatItem.unreadMessageCountHolder.visibility = View.GONE
+            chatItem.chatMessageTime.setTextColor(Color.parseColor("#aaaaaa"))
+            chatItem.chatMessageTime.setTypeface(null, Typeface.NORMAL)
+        } else {
+            chatItem.unreadMessageCountHolder.visibility = View.VISIBLE
+            chatItem.chatMessageTime.setTextColor(Color.parseColor("#ff99cc00"))
+            chatItem.chatMessageTime.setTypeface(null, Typeface.BOLD)
+        }
+
+    }
+
+    fun getFormattedTime(timestamp: Long): String{
+        val simpleDateFormat = SimpleDateFormat("hh:mm a", Locale.ENGLISH)
+        return simpleDateFormat.format(timestamp)
     }
 
     override fun getItemCount(): Int {

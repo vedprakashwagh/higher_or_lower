@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
+    android:foreground="?selectableItemBackground"
+    android:clickable="true"
     >
 
     <com.makeramen.roundedimageview.RoundedImageView
@@ -13,6 +15,7 @@
         android:layout_height="56dp"
         android:src="@color/blue"
         app:riv_oval="true"
+        android:scaleType="centerCrop"
         />
 
     <LinearLayout
