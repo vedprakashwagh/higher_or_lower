@@ -41,7 +41,8 @@
             android:roundIcon="@color/red"
             >
         </activity>
-        <activity android:name=".ActivityUserInfo" />
+        <activity android:name=".ActivityUserInfo"
+            />
 
     </application>
 

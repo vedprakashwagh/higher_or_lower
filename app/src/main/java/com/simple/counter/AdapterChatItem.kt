@@ -1,5 +1,6 @@
 package com.simple.counter
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.view.LayoutInflater
@@ -46,6 +47,14 @@ class AdapterChatItem : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             chatItem.unreadMessageCountHolder.visibility = View.VISIBLE
             chatItem.chatMessageTime.setTextColor(Color.parseColor("#ff99cc00"))
             chatItem.chatMessageTime.setTypeface(null, Typeface.BOLD)
+        }
+
+        chatItem.itemView.setOnClickListener {
+            val intent = Intent(chatItem.itemView.context, ActivityUserInfo::class.java)
+            intent.putExtra("CHAT_NAME", currentChatItem?.userName)
+            intent.putExtra("PROFILE_PIC", currentChatItem?.imageUrl)
+            intent.putExtra("MESSAGE", currentChatItem?.userMessage)
+            chatItem.itemView.context.startActivity(intent)
         }
 
     }
