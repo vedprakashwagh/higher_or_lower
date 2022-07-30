@@ -12,14 +12,14 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@id/chatName"
-        app:layout_constraintBottom_toTopOf="@id/chatMessage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="16dp"
         app:riv_oval="true"
         android:scaleType="centerCrop"
         android:src="@color/teal_green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/background"
+        app:layout_constraintEnd_toStartOf="@id/chatName"
         />
     
     <TextView
@@ -30,9 +30,9 @@
         android:gravity="center_vertical"
         android:textSize="20sp"
         android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/profilePicture"
         app:layout_constraintTop_toTopOf="@id/profilePicture"
         app:layout_constraintBottom_toBottomOf="@id/profilePicture"
-        app:layout_constraintStart_toEndOf="@id/profilePicture"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
@@ -41,9 +41,9 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        android:background="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="#EBE5DE"
         app:layout_constraintTop_toBottomOf="@id/profilePicture"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
@@ -53,10 +53,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/profilePicture"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="@id/background"
+        app:layout_constraintBottom_toBottomOf="@id/background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

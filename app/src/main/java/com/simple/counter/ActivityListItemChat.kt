@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.simple.counter.model.ModelChat
 import retrofit2.Call
 import retrofit2.Callback
@@ -38,6 +39,7 @@ class ActivityListItemChat: Activity() {
                     recyclerViewChatItems.adapter = adapter
                     recyclerViewChatItems.layoutManager = LinearLayoutManager(this@ActivityListItemChat)
                     var listItems = response.body()
+                    Log.d("Database", Gson().toJson(listItems))
                     adapter.updateList(listItems)
                 } else {
                     Log.d("RequestFailed", "Response was not successful!")
